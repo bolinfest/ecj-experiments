@@ -1,0 +1,36 @@
+jars = {
+  'jdt-core': {
+    'bin': 'org.eclipse.jdt.core_3.10.0.v20140604-1726.jar',
+    'src': None
+  },
+  'jdt-core-jobs': {
+    'bin': 'org.eclipse.core.jobs_3.6.0.v20140424-0053.jar',
+    'src': 'org.eclipse.core.jobs.source_3.6.0.v20140424-0053.jar',
+  },
+  'jdt-core-resources': {
+    'bin': 'org.eclipse.core.resources_3.9.0.v20140514-1307.jar',
+    'src': 'org.eclipse.core.resources.source_3.9.0.v20140514-1307.jar',
+  },
+  'jdt-core-runtime': {
+    'bin': 'org.eclipse.core.runtime_3.10.0.v20140318-2214.jar',
+    'src': None,
+  },
+  'jdt-equinox-common': {
+    'bin': 'org.eclipse.equinox.common_3.6.200.v20130402-1505.jar',
+    'src': None,
+  },
+  'osgi': {
+    'bin': 'org.eclipse.osgi_3.10.0.v20140606-1445.jar',
+    'src': 'org.eclipse.osgi.source_3.10.0.v20140606-1445.jar',
+  }
+}
+
+for (name, data) in jars.items():
+  prebuilt_jar(
+    name = name,
+    binary_jar = data['bin'],
+    source_jar = data['src'],
+    visibility = [
+      'PUBLIC',
+    ],
+  )

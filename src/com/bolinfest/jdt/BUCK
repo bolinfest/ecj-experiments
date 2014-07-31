@@ -1,0 +1,24 @@
+java_library(
+  name = 'jdt',
+  srcs = glob(['**/*.java']),
+  deps = [
+    '//lib:jdt-core',
+    '//lib:jdt-core-jobs',
+    '//lib:jdt-core-resources',
+    '//lib:jdt-core-runtime',
+    '//lib:jdt-equinox-common',
+    '//lib:osgi',
+  ],
+)
+
+java_binary(
+  name = 'main',
+  main_class = 'com.bolinfest.jdt.Main',
+  deps = [
+    ':jdt',
+  ],
+)
+
+project_config(
+  src_target = ':jdt',
+)

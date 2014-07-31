@@ -1,0 +1,6 @@
+[java]
+  src_roots = src, test
+[alias]
+  jdt = //src/com/bolinfest/jdt:jdt
+  main = //src/com/bolinfest/jdt:main
+
