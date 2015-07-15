@@ -1,27 +1,27 @@
 jars = {
   'jdt-core': {
-    'bin': 'org.eclipse.jdt.core_3.10.0.v20140604-1726.jar',
-    'src': None
+    'bin': 'org.eclipse.jdt.core_3.11.0.v20150126-2015.jar',
+    'src': None,
   },
   'jdt-core-jobs': {
-    'bin': 'org.eclipse.core.jobs_3.6.0.v20140424-0053.jar',
-    'src': 'org.eclipse.core.jobs.source_3.6.0.v20140424-0053.jar',
+    'bin': 'org.eclipse.core.jobs_3.7.0.v20150115-2226.jar',
+    'src': None,
   },
   'jdt-core-resources': {
-    'bin': 'org.eclipse.core.resources_3.9.0.v20140514-1307.jar',
-    'src': 'org.eclipse.core.resources.source_3.9.0.v20140514-1307.jar',
+    'bin': 'org.eclipse.core.resources_3.9.100.v20150114-1351.jar',
+    'src': None,
   },
   'jdt-core-runtime': {
-    'bin': 'org.eclipse.core.runtime_3.10.0.v20140318-2214.jar',
+    'bin': 'org.eclipse.core.runtime_3.10.0.v20150112-1422.jar',
     'src': None,
   },
   'jdt-equinox-common': {
-    'bin': 'org.eclipse.equinox.common_3.6.200.v20130402-1505.jar',
+    'bin': 'org.eclipse.equinox.common_3.6.200.v20141113-1308.jar',
     'src': None,
   },
   'osgi': {
-    'bin': 'org.eclipse.osgi_3.10.0.v20140606-1445.jar',
-    'src': 'org.eclipse.osgi.source_3.10.0.v20140606-1445.jar',
+    'bin': 'org.eclipse.osgi_3.10.100.v20150129-2253.jar',
+    'src': None,
   }
 }
 
