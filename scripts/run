@@ -7,14 +7,24 @@ buck build main
 # For some reason, specifying the bundle in a relative way fails:
 #     -Dosgi.bundles=reference:file:./buck-out/gen/src/com/bolinfest/jdt/main.jar@start \
 
+# I tried starting org.eclipse.jdt.core, but it complained that the workspace was closed.
+# This happens in org.eclipse.core.resources.ResourcesPlugin, so I tried adding
+# org.eclipse.core.resources@1:start to the bundles list.
+
+# Starting org.eclipse.core.resources exercised a code path that tried to instantiate a
+# org.eclipse.core.internal.resources.LocalMetaArea. This called through to
+# org.eclipse.core.internal.runtime.InternalPlatform.assertInitialized(), which failed.
+# The next step appears to be to start org.eclipse.core.runtime, though I am nervous about
+# how many new transitive dependencies that will introduce. Much of the point of this
+# exercise was to get the tooling of ECJ without pulling in the entire Eclipse runtime,
+# but it seems like we are going further and further in that direction.
+
 # TODO(bolinfest): Add the following back in once the below starts up cleanly.
 # "-Dosgi.bundles=reference:file:${PWD}/buck-out/gen/src/com/bolinfest/jdt/main.jar@start"
-
-# The list of osgi.bundles was empirically determined to be the dependencies of org.eclipse.jdt.core.
 java \
   -Declipse.ignoreApp=true \
-  "-Dosgi.bundles=org.eclipse.jdt.core@1:start,\
-org.eclipse.core.resources,\
+  "-Dosgi.bundles=org.eclipse.jdt.core,\
+org.eclipse.core.resources@1:start,\
 org.eclipse.core.expressions,\
 org.eclipse.core.expressions,\
 org.eclipse.core.runtime,\
