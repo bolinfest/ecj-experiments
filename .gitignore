@@ -8,4 +8,8 @@
 
 /plugins/configuration/
 
+# This seems to be created automatically when starting Eclipse.
+# We really need to figure out how to make this stop.
+/workspace/
+
 *.iml

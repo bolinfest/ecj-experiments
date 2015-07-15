@@ -24,10 +24,10 @@ buck build main
 java \
   -Declipse.ignoreApp=true \
   "-Dosgi.bundles=org.eclipse.jdt.core,\
-org.eclipse.core.resources@1:start,\
+org.eclipse.core.resources@3:start,\
 org.eclipse.core.expressions,\
 org.eclipse.core.expressions,\
-org.eclipse.core.runtime,\
+org.eclipse.core.runtime@2:start,\
 org.eclipse.equinox.common,\
 org.eclipse.core.jobs,\
 org.eclipse.equinox.registry,\
@@ -37,7 +37,8 @@ org.eclipse.equinox.app,\
 org.eclipse.core.filesystem,\
 org.eclipse.text,\
 com.ibm.icu,\
-org.eclipse.core.commands" \
+org.eclipse.core.commands,\
+org.eclipse.equinox.common@1:start" \
   -jar \
     plugins/org.eclipse.osgi_3.10.100.v20150129-2253.jar \
   -consoleLog
