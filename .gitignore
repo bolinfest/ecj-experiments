@@ -1,5 +1,9 @@
 /.idea/
+
+/.buckd/
 /buck-out/
+
+/build-ij/
 /out/
 
 *.iml
