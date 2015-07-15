@@ -1,7 +1,7 @@
 java_library(
   name = 'jdt',
   srcs = glob(['**/*.java']),
-  deps = [
+  provided_deps = [
     '//lib:jdt-core',
     '//lib:jdt-core-jobs',
     '//lib:jdt-core-resources',
@@ -13,7 +13,7 @@ java_library(
 
 java_binary(
   name = 'main',
-  main_class = 'com.bolinfest.jdt.Main',
+  manifest_file = 'MANIFEST.MF',
   deps = [
     ':jdt',
   ],

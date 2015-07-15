@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: My ECJ experiments
+Bundle-SymbolicName: com.bolinfest.jdt
+Bundle-Version: 1.0.0
+Bundle-Activator: com.bolinfest.jdt.MyActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy

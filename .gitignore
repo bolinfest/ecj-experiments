@@ -6,4 +6,6 @@
 /build-ij/
 /out/
 
+/lib/configuration/org.eclipse.osgi/
+
 *.iml

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd `git rev-parse --show-toplevel`
+
+buck build main
+
+# For some reason, specifying the bundle in a relative way fails:
+#     -Dosgi.bundles=reference:file:./buck-out/gen/src/com/bolinfest/jdt/main.jar@start \
+
+java \
+  -Declipse.ignoreApp=true \
+  "-Dosgi.bundles=reference:file:${PWD}/buck-out/gen/src/com/bolinfest/jdt/main.jar@start" \
+  -jar \
+    lib/org.eclipse.osgi_3.10.100.v20150129-2253.jar \
+  -consoleLog
