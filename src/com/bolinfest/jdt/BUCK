@@ -2,12 +2,12 @@ java_library(
   name = 'jdt',
   srcs = glob(['**/*.java']),
   provided_deps = [
-    '//lib:jdt-core',
-    '//lib:jdt-core-jobs',
-    '//lib:jdt-core-resources',
-    '//lib:jdt-core-runtime',
-    '//lib:jdt-equinox-common',
-    '//lib:osgi',
+    '//plugins:jdt-core',
+    '//plugins:jdt-core-jobs',
+    '//plugins:jdt-core-resources',
+    '//plugins:jdt-core-runtime',
+    '//plugins:jdt-equinox-common',
+    '//plugins:osgi',
   ],
 )
 
